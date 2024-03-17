@@ -1,0 +1,259 @@
+'''
+COMEÇO
+-O que é uma Variável?
+É um valor onde se armazenar valores, textos, e o que você quiser. Pois é como se fosse um armário.
+Ex: A = Valor, valor = 1
+
+Exemplos de como se usar Vriável e usar o valor dentro dela:
+nome = "Samuel"
+idade = 21
+relacionamento = False
+altura = 1.80
+print(nome)
+print(idade)
+print(relacionamento)
+print(altura)
+
+
+-O que é Sintaxe?
+É a formação do código.
+Ex: print()
+
+===============================================================================================================
+ORDEM DE PRECEDÊNCIA
+
+
+Primeiro --> ()
+Segundo --> **(Potênciação)
+Terceiro --> *(Multiplicação), /(Divisão normal), //(Divisão inteira) , %Resto da divisão
+Quarto --> +(Soma), -(Subtração)
+
+Exemplos utilizando operações matemáticas:
+SM = int(input("Qual número você quer somar e depois multiplicar? "))
+print((SM + SM) * SM)
+SM = int(input("Qual número você quer dividir e depois subtrair? "))
+print((SM / SM) - SM)
+número = int(input("Qual número será o divisor? "))
+print("A divisão de {} por {} é igual a {}".format(n, n1, n/n1)) - Divisão normal
+print("A divisão de {} por {} é igual a {}".format(n, n1, n//n1)) - divisão inteira
+
+===============================================================================================================
+TIPOS DE ALINHAMENTO
+
+
+nome = input("Qual seu nome? ")
+print("Muito prazer, {:=^10}!".format(nome)) - Centraliza a variável entre o "="
+print("{:=^40}".format(" LOJAS GUANABARA ")) - Centraliza a palavra ou o valor que você quer no centro do "="
+
+{Variável:Linha de Espaço}
+> --> Ele alinha a palavra a direita
+< --> Ele alinha a palavra a esquerda
+^ --> Ele centraliza a palavra
+
+===============================================================================================================
+FATIAMENTO
+
+
+{0:2} --> Só será coletado do Índice 0 até o Índice 1
+Exemplo: Palavra: "Oi", {0:2}. o print só pegará a letra "O"
+{0:2:11} --> Assim ele vai coletar até o Índice 10 e irá pegar pulando de 2 em 2 letras
+
+
+===============================================================================================================
+IMPORTAÇÃO DE BIBLIOTECAS
+
+
+import biblioteca 
+-Este módulo importa todas as funções que estiverem na biblioteca
+
+from biblioteca import função
+- Este módulo importa somente uma função da biblioteca
+
+===============================================================================================================
+BIBLIOTECA "math"
+
+
+import math
+
+math.ceil --> Arredonda números pra cima
+math.floor --> Arredonda números pra baixo
+math.trunc --> Elimina números do ponto pra frente
+math.pow --> Faz potênciação
+math.sqrt --> Tira a raiz quadrada
+math.factorial --> Fatora o número
+
+
+Exemplo de Raiz Quadrada:
+número = int(input("Digite um número: "))
+raiz = math.sqrt(num)
+print("A raiz de {} é igual a {:.3f}.".format(num, raiz))
+
+===============================================================================================================
+Biblioteca "random"
+
+import random
+
+1. random.choice() --> Pega um valor aleatório de alguma lista
+Exemplo:
+lista = [a1, a2, a3, a4]
+sorteado = random.choice(lista)
+Escolhe um valor na lista para ser escolhido
+
+
+2. random.randint(x, y) --> Números aleatórios de x a x
+Exemplo:
+num = random.randint(1, 10)
+print(num)
+
+
+3. random.shuffle() --> Embaralha os valores de uma lista
+
+
+===============================================================================================================
+MANIPULAÇÃO DE STRING
+
+frase = "Curso em vídeo"
+
+len(frase) --> Quantidade de índices em uma frase.
+frase.count("o") --> Conta a quantidade de letras 'o' em uma lista.
+frase.find("deo") --> Mostra em que índice começou a palavra.
+"curso" in frase --> Existe curso em frase? se tiver "True, se não tiver "False".
+frase.replace("Python", "Android") --> Substituição de uma palavra por outra.
+frase.upper() --> Deixa tudo que está na string maiúsculo.
+frase.lower() --> Deixa tudo que está na string minúsculo.
+frase.capitalize() - Deixa tudo que está na string minúsculo e a primeira letra em Maiúscula.
+frase.title() - Deixa todo começo de texto maiúsculo.
+frase.strip() - Remove espaços no começo e no final.
+frase.split() - Gera uma lista com as palavras, Exemplo: "Curso em vídeo python", nesse caso o índice de v de vídeo é 0, e cada palavra se torna um índice
+"-".join(frase) - Junta todas as palvras com "-" em caso de listas
+Utilização do "R" e do "L" em algumas funções como o find, ex: "rfind"
+
+===============================================================================================================
+ANSI - COLORIR NO TERMINAL
+
+-- Para se iniciar utilizamos da seguinte forma:
+\033[    ;       ;       m
+      |       |       |  
+    Style    Text   Color/Back
+
+--Style:
+0 --> Normal
+1 --> Negrito
+4 --> Sublinhado
+7 --> Inversão
+
+--Text/Back Color:
+30/40 --> Branco
+31/41 --> Vermelho
+32/42 --> Verde
+33/43 --> Amarelo
+34/44 --> Azul
+35/45 --> Rosa
+36/46 --> Azul Marinho
+37/47 --> Cinza
+
+Exemplos:
+
+Fundo vermelho com letra branca:
+--> \033[0;30;41m
+Fundo azul com letra amarela sublinhada:
+--> \033[4;33;44m
+Fundo Amarelo com letra roxa:
+--> \033[1;35;43m
+
+===============================================================================================================
+LAÇOS DE REPETIÇÃO: for
+
+-- Como é feito
+for (variável) in range(x, y):
+Para se puxar o for, a variável é como se fosse o nome do for.
+
+
+Em PT-BR: laço c no intervalo(0:5)
+Em ENG: for c in range(0:5) 
+
+
+-- Realiza uma contagem de 0 a 5
+for c in range(0, 6):
+    print(c)
+
+-- Realiza uma contagem de 5 a 1 ao contrário
+for c in range(5, 0, -1):
+    print(c)
+
+-- Realiza uma contagem de 0 a 6 pulando de 2 em 2
+for c in range(0, 7, 2):
+    print(c)
+
+-- Pode-se passar o parâmetro do for usado input
+i = int(input("Digite o ínicio: "))
+f = int(input("Digite o final: "))
+p = int(input("Digite o passo: "))
+for c in range(i, f+1, p):
+    print(c)
+print("FIM)
+
+-- Para se realizar um somatório de alguma coisa só escrever:
+total = 0
+
+total = total + 1--> Somando de um em um
+total += 1--> Somando de um em um
+
+-- Faz com que os números vão em uma linha só ao ínves de um em baixo do outro
+for c in range(0, 51, 2):
+    print(c, end=" ")
+
+===============================================================================================================
+Laços de repetição: While
+
+-- Como é feito
+While (sua condição):
+Enquanto (sua condição):
+
+Exemplos:
+#Contagem de 1 a 9
+contador = 1
+while contador < 10:
+    print(c)
+    c = c + 1
+-----------------------------------
+r = "s"
+while r == "s":
+    n = int(input("Digite um valor: "))
+    r = str(input("Quer continuar? [S/N] "))
+print("Fim")
+-----------------------------------
+n = 1
+par = impar = 0
+while n != 0:
+    n = int(input("Digite um valor: "))
+    if n != 0:
+        if n % 2 == 0:
+            par += 1
+        else:
+            impar += 1
+print("Você digitou {} números pares e {} números ímpares!".format(par, impar))
+===============================================================================================================
+Tuplas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     _______.     ___      .___  ___.  __    __  
+    /       |    /   \     |   \/   | |  |  |  | 
+   |   (----`   /  ^  \    |  \  /  | |  |  |  | 
+    \   \      /  /_\  \   |  |\/|  | |  |  |  | 
+.----)   |    /  _____  \  |  |  |  | |  `--'  | 
+|_______/    /__/     \__\ |__|  |__|  \______/  
+#Discord: 09samuk_
+'''
